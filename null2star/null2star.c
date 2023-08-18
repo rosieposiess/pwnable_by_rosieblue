@@ -37,13 +37,13 @@ void print_addr(char* buf){ //이 함수로 스택의 리턴 어드레스 구하
     off_t off2=0;
     
     read(0,&addr,8); //stdin주소
-	  read(0,&off1,2);
+    read(0,&off1,2);
     read(0,&off2,2);
     
-		if(*(void*)(addr+off1)==*(void*)(buf+off2)) {
-		//addr:stdin을, off1: 0x40, off2:0x218 을 넣으면 만족할듯 
-			printf("Wanted Address: %p\n",(void*)(buf+off2));
-	}
+    if(*(void*)(addr+off1)==*(void*)(buf+off2)) {
+    	//addr:stdin을, off1: 0x40, off2:0x218 을 넣으면 만족할듯 
+    	printf("Wanted Address: %p\n",(void*)(buf+off2));
+    }
 }
 
 
