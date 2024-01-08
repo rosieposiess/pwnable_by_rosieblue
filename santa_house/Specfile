@@ -1,0 +1,12 @@
+[wargame]
+title = Santa House
+tags = pwnable
+flag = DH{d1D_yOu_lIk3_My_Sp3cI4l_G1f7} 
+
+[vm]
+os = linux
+memory = 127
+disk = 256
+ports = 5555/tcp
+allow_outgoing = false
+docker_compose = false
