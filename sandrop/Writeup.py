@@ -1,8 +1,9 @@
 from pwn import *
 
-p=process("./chall")
+p=remote("host3.dreamhack.games",18942)
+#p=process("./chall")
 e=ELF("./chall")
-#context.log_level='debug'
+context.log_level='debug'
 context.arch='amd64'
 
 
@@ -68,4 +69,4 @@ p.send(b'B'*15)
 pause()
 p.send(b'C'*15)
 
-p.interactive()
+#p.interactive()

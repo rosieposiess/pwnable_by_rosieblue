@@ -9,7 +9,7 @@ RUN apt-get -y install socat
 RUN adduser --disabled-password $user
 
 ADD ./chall /home/$user/chall
-
+ADD ./flag /home/$user/flag
 
 RUN export LD_PRELOAD='/libc-2.31.so' 
 
