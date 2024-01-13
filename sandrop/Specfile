@@ -1,0 +1,12 @@
+[wargame]
+title = sandrop
+tags = pwnable
+flag = DH{S4ndrOP_Is_sAnD8Ox_p1uS_sr0P!!!!!!!!!!}
+
+[vm]
+os = linux
+memory = 127
+disk = 256
+ports = 4444/tcp
+allow_outgoing = false
+docker_compose = false
