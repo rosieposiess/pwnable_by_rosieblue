@@ -1,7 +1,7 @@
-# pwnable_by_roseiblue
-직접 만든 pwnable 문제 업로드 (계속 추가 예정)
+# pwnable_by_rosieblue
+Self-made pwnable challenges
 
-문제 | keyword|
+Challenge | keyword|
 ---|---|
 Santa House| `Address Leak`|
 sandrop|`SROP`,`SECCOMP`|
@@ -9,24 +9,19 @@ u_can_read|`SROP`,`SECCOMP`|
 
 
 
-## Santa House
-> 암호화된 랜덤값을 이용해 `PIE` 및 `Library Base`를 알아낸 후, `Stack Pivoting` 등으로 `shell`을 획득하는 문제
-* [2023 Dreamhack X-MAS CTF](https://dreamhack.io/ctf/426)에 출제 (600명 중 최종 solver 13팀)
-* 현재는 [드림핵 워게임](https://dreamhack.io/wargame/challenges/1071)으로 포팅되었음
-* 문제 사진
-  
-![image](https://github.com/rosieposiess/pwnable_by_rosieblue/assets/89526187/4e9e2628-f1c9-48a2-a803-8dbfc26e07dd)
+## 1. Santa House
+> In this challenge, you have to leak `PIE` and `Library Base` using encrypted random values. After leaking addresses `shell` can be obtained using techniques such as `Stack Pivoting`.
+* Challenge of [2023 Dreamhack X-MAS CTF](https://dreamhack.io/ctf/426) (Final solver team 13 out of 600)
+* Currently ported to [Dreamhack](https://dreamhack.io/wargame/challenges/1071)
 
 
 
-
-## sandrop
-> `SROP Chain`을 구성하여 `SECCOMP Filter`를 Bypass하는 문제
-* 2024년도 2월에 개최될 [EWHA 1st ESC CTF](https://ecs.ctfd.io/)에 출제 예정
-
+## 2. sandrop
+> Bypassing `SECCOMP` Filter by configuring `SROP chain`
+* This challenge will be presented at [EWHA 1st ESC CTF](https://ecs.ctfd.io/) to be held in February 2024
 
 
-## u_can_read
-> `SROP Chain`을 구성하여 `SECCOMP Filter`를 Bypass하는 문제
-* 위 sandrop 문제의 쉬운 버전
-* 2024년도 2월에 개최될 [EWHA 1st ESC CTF](https://ecs.ctfd.io/)에 출제 예정 
+## 3. u_can_read
+> Bypassing `SECCOMP` Filter by configuring `SROP chain`
+* Easy version of `sandrop` challenge above
+* This challenge will be presented at [EWHA 1st ESC CTF](https://ecs.ctfd.io/) to be held in February 2024
