@@ -6,18 +6,19 @@ ENV chall_port 4444
 RUN apt-get update
 RUN apt-get -y install socat
 
-RUN adduser $user
+RUN adduser --disabled-password $user
 
-ADD ./flag /home/$user/flag
 ADD ./chall /home/$user/chall
+ADD ./flag /home/$user/flag
 
-RUN chown root:$user /home/$user/flag
+RUN export LD_PRELOAD='/libc-2.31.so' 
+
+RUN chown -R root:root /home/$user/
 RUN chown root:$user /home/$user/chall
 
 RUN chmod 755 /home/$user/chall
-RUN chmod 440 /home/$user/flag
 
-WORKDIR /home/$user
+WORKDIR /home/$user/
 USER $user
 EXPOSE $chall_port
-CMD socat -T 30 TCP-LISTEN:$chall_port,reuseaddr,fork EXEC:/home/$user/chall
+CMD while :; do socat -T 30 TCP-LISTEN:$chall_port,reuseaddr,fork EXEC:/home/$user/chall ; done

