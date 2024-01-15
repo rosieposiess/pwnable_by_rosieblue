@@ -1,7 +1,21 @@
+# pwnable_by_roseiblue
+직접 만든 pwnable 문제 업로드 (계속 추가 예정)
+
+문제 | keyword|
+---|---|
+Santa House| `Address Leak`|
+sandrop|`SROP`,`SECCOMP`|
+u_can_read|`SROP`,`SECCOMP`|
+
+
+
 ## Santa House
 > 암호화된 랜덤값을 이용해 `PIE` 및 `Library Base`를 알아낸 후, `Stack Pivoting` 등으로 `shell`을 획득하는 문제
-* [2023 Dreamhack X-MAS CTF](https://dreamhack.io/ctf/426)에 출제 (600명 중 최종 solver 12팀)
+* [2023 Dreamhack X-MAS CTF](https://dreamhack.io/ctf/426)에 출제 (600명 중 최종 solver 13팀)
 * 현재는 [드림핵 워게임](https://dreamhack.io/wargame/challenges/1071)으로 포팅되었음
+* 문제 사진
+  
+![image](https://github.com/rosieposiess/pwnable_by_rosieblue/assets/89526187/4e9e2628-f1c9-48a2-a803-8dbfc26e07dd)
 
 
 
