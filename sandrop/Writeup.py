@@ -1,6 +1,6 @@
 from pwn import *
 
-p=remote("host3.dreamhack.games",15187)
+p=remote("0.cloud.chals.io",23246)
 e=ELF("./chall")
 #context.log_level='debug'
 context.arch='amd64'

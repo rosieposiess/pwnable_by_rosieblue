@@ -1,7 +1,9 @@
 from pwn import *
 
-p=process("./862ef11b7b9c81837bed9f30bda791c440ae4ef5045bbda477cad3126c37174c")
-e=ELF("./862ef11b7b9c81837bed9f30bda791c440ae4ef5045bbda477cad3126c37174c")
+p=remote("0.cloud.chals.io",11503)
+#p=process("./862ef11b7b9c81837bed9f30bda791c440ae4ef5045bbda477cad3126c37174c")
+#e=ELF("./862ef11b7b9c81837bed9f30bda791c440ae4ef5045bbda477cad3126c37174c")
+e=ELF("./chall")
 context.clear(arch='amd64')
 
 def slog(name, addr): return success(': '.join([name, hex(addr)]))
