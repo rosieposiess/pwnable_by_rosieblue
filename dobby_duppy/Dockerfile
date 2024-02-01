@@ -11,7 +11,6 @@ RUN pip3 install keystone-engine
 RUN pip3 install pwntools
 
 RUN adduser pwn --disabled-password --gecos ''
-RUN adduser pwned
 RUN echo "Port 22" >> /etc/ssh/sshd_config
 RUN echo "	StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 RUN echo  "	UserKnownHostsFile=/dev/null" >> /etc/ssh/ssh_config
@@ -22,14 +21,22 @@ RUN echo "Host * \
    UserKnownHostsFile=/dev/null" > /home/pwn/.ssh/config
 
 RUN chmod 777 /etc/ssh/
-COPY ./deploy/flag /home/pwn/flag
-COPY ./deploy/chall /home/pwn/chall
+COPY ./deploy/ /home/pwn/
 
-RUN chown root:pwned /home/pwn/flag
-RUN chown root:pwned /home/pwn/chall
+#파일 권한 및 디렉토리 권한 설정
+RUN chown root:root /home/pwn/flag
+RUN chown root:root /home/pwn/chall
 RUN chmod 2640 /home/pwn/flag
 RUN chmod 2755 /home/pwn/chall
+RUN chmod -w /home/pwn/
+RUN chmod 666 /home/pwn/your_code.py
 
+
+#명령어 권한 제거
+RUN chmod 700 /usr/bin/tty
+RUN chmod 700 /usr/bin/ps
+RUN chmod 700 /usr/bin/stat
+RUN chmod 700 /usr/bin/readlink
 
 # SSH 서비스 설정
 RUN echo "Port 22" >> /etc/ssh/sshd_config
@@ -47,5 +54,4 @@ RUN service ssh --full-restart
 WORKDIR /home/pwn
 
 EXPOSE 22
-#USER pwn
 CMD ["/usr/sbin/sshd","-D"]
