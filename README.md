@@ -20,7 +20,8 @@ dobby_duppy|`Shellcode`,`dup2`|
 
 ## 2. sandrop
 > Bypassing `SECCOMP` Filter by configuring `SROP chain`
-* This challenge is presented at [EWHA 1st ESC CTF](https://ecs.ctfd.io/) to be held in February 2024
+* This challenge is presented at [EWHA 1st ECS CTF](https://ecs.ctfd.io/) to be held in February 2024
+* Currently ported to [Dreamhack](https://dreamhack.io/wargame/challenges/1087)
 
 <br/>
 
@@ -28,14 +29,14 @@ dobby_duppy|`Shellcode`,`dup2`|
 ## 3. u_can_read
 > Bypassing `SECCOMP` Filter by configuring `SROP chain`
 * Easy version of `sandrop` challenge above
-* This challenge is presented at [EWHA 1st ESC CTF](https://ecs.ctfd.io/) to be held in February 2024
+* This challenge is presented at [EWHA 1st ECS CTF](https://ecs.ctfd.io/) to be held in February 2024
 
 <br/>
 
 
 ## 4. dobby_duppy
-> Bypassing 'dup2' function with shellcode
-* This challenge is presented at [EWHA 1st ESC CTF](https://ecs.ctfd.io/) to be held in February 2024
+> Bypassing `dup2` function with shellcode
+* This challenge is presented at [EWHA 1st ECS CTF](https://ecs.ctfd.io/) to be held in February 2024
 * Currently ported to [Dreamhack](https://dreamhack.io/wargame/challenges/1110)
 
 
