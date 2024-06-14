@@ -30,6 +30,8 @@ void sandbox() {
   seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(write),0);
   seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(writev),0);
   seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(pwritev),0);
+  seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(mprotect),0);
+  seccomp_rule_add(ctx, SCMP_ACT_KILL, SCMP_SYS(mmap),0);
   seccomp_load(ctx);
 }
 
