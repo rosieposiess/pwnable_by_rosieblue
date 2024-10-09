@@ -1,5 +1,6 @@
 # pwnable_by_rosieblue
-Self-made pwnable challenges
+Collection of self-made system hacking challenges designed to test and enhance your cybersecurity skills
+
 
 Challenge | keyword|
 ---|---|
